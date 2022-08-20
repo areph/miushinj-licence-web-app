@@ -22,6 +22,7 @@
 ## 作り方
 
 1. AWSのマネコンでサーバーサイドのAPIを作成
+   1. DB設計
 2. フロントエンドを作成
 3. 管理画面の作成
 4. 認証の作成
@@ -30,3 +31,18 @@
       1. https://aws.amazon.com/jp/serverless/sam/
    2. CDK(Cloud Development Kit)
       1. https://aws.amazon.com/jp/cdk/
+
+### DB設計
+
+#### テーブル名
+
+licences
+
+#### データ設計
+
+| 属性               | Type               |
+| ------------------ | ------------------ |
+| メールアドレス     | パーティションキー |
+| トレーニング受講日 | ソートキー         |
+| ライセンスコード   | String             |
+| 引き換え日時       | Datetime or String |
