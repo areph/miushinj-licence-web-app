@@ -37,7 +37,7 @@ exports.handler = async (event) => {
   // TODO: 取得したライセンスコードをJSONとして返却したい
   const response = {
     statusCode: 200,
-    body: JSON.stringify({ licenceCode: res[0]['licenceCode'] }),
+    body: JSON.stringify({ licenceCode: res[0]['licenceCode']['S'] }),
   };
   return response;
 };
