@@ -28,15 +28,14 @@ exports.handler = async (event) => {
   console.log(res)
   console.log("===== DDB Query END =====")
 
-  // TODO: 取得したライセンスコードをJSONとして返却したい
-
   // エラーハンドリング
   // TODO: パラメータにメールアドレスとトレーニング日がない場合はエラーとして処理を終了
   // TODO: ライセンスコードが取得できない場合はエラーとして処理を終了
 
+  // TODO: 取得したライセンスコードをJSONとして返却したい
   const response = {
     statusCode: 200,
-    body: JSON.stringify('Hello from Lambda!'),
+    body: JSON.stringify({ licenceCode: res[0]['licenceCode'] }),
   };
   return response;
 };
