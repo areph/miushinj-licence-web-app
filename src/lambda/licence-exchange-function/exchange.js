@@ -11,12 +11,6 @@ submitButton.addEventListener('click', async () => {
     body: JSON.stringify(data)
   })
   const json = await response.json()
-  console.log(json);
-
-  console.log(json);
-  console.log(json.statusCode)
-  console.log(json.body)
-  console.log(JSON.parse(json.body));
   const body = JSON.parse(json.body)
 
   document.getElementById('licence').innerHTML = body['licenceCode']
