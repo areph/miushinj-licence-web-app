@@ -1,8 +1,11 @@
+const aws = require('aws-sdk');
+const dynamodb = new aws.DynamoDB();
+
 exports.handler = async (event) => {
 
   console.log(event);
 
-  // TODO: パラメータとしてメールアドレスとトレーニング日を取得したい
+  // パラメータとしてメールアドレスとトレーニング日を取得
   const email = event['email'];
   const trainingDate = event['training-date'];
 
