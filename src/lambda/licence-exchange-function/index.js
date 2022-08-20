@@ -3,17 +3,11 @@ const dynamodb = new aws.DynamoDB();
 
 exports.handler = async (event) => {
 
-  console.log(event);
-  console.log(event["body"]);
-
-  const req = JSON.stringify(event["body"]);
-
-  console.log("---------")
-  console.log(req);
+  const req = event["body"];
 
   // パラメータとしてメールアドレスとトレーニング日を取得
-  const email = event['email'];
-  const trainingDate = event['training-date'];
+  const email = req['email'];
+  const trainingDate = req['training-date'];
 
   console.log(`email: ${email}, trainingDate: ${trainingDate}`);
 
