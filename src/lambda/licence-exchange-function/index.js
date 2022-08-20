@@ -26,15 +26,7 @@ exports.handler = async (event) => {
   }
 
   console.log("=====START=====")
-  const res = await ddbQuery(params, (err, data) => {
-    if (err) {
-      console.log(`Error!: ${err}`);
-    } else {
-      console.log("Success!")
-      console.log(data.Items);
-    }
-    console.log("------------")
-  })
+  const res = await ddbQuery(params);
   console.log(res)
   console.log("===END====")
 
@@ -55,7 +47,6 @@ function ddbQuery(params) {
   return new Promise((resolve, reject) => {
     dynamodb.query(params, (err, data) => {
       if (err) {
-        console.log("----ERROR------")
         reject(err, err)
       } else {
         resolve(data.Items)
