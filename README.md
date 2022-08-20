@@ -46,3 +46,10 @@ licences
 | トレーニング受講日 | training-date | ソートキー         |
 | ライセンスコード   | licence-code  | String             |
 | 引き換え日時       | exchange-date | Datetime or String |
+
+#### ビジネスロジック作成
+
+- Lambda
+- Node.js 16
+- AWS SDK
+  - https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html
