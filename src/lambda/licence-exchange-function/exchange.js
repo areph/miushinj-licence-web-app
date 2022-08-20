@@ -4,7 +4,7 @@ submitButton.addEventListener('click', async () => {
   const email = document.getElementById('email').value
   const trainingDate = document.getElementById('training-date').value
   const data = { "email": email, "training-date": trainingDate };
-  console.log(data);
+  // console.log(data);
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -12,4 +12,12 @@ submitButton.addEventListener('click', async () => {
   })
   const json = await response.json()
   console.log(json);
+
+  console.log(json);
+  console.log(json.statusCode)
+  console.log(json.body)
+  console.log(JSON.parse(json.body));
+  const body = JSON.parse(json.body)
+
+  document.getElementById('licence').innerHTML = body['licenceCode']
 })
