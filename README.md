@@ -19,3 +19,14 @@
 
 ![構成図](design.drawio.png)
 
+## 作り方
+
+1. AWSのマネコンでサーバーサイドのAPIを作成
+2. フロントエンドを作成
+3. 管理画面の作成
+4. 認証の作成
+5. サーバーサイドをIaCに変換
+   1. SAM(Serverless Application Model)
+      1. https://aws.amazon.com/jp/serverless/sam/
+   2. CDK(Cloud Development Kit)
+      1. https://aws.amazon.com/jp/cdk/
