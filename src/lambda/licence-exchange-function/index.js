@@ -9,26 +9,24 @@ exports.handler = async (event) => {
 
   console.log(`email: ${email}, trainingDate: ${trainingDate}`);
 
-  // TODO: メールアドレスとトレーニング日をキーにしてDynamoDBからデータを取得したい
-  // TODO: QueryでDDBを検索する
+  // メールアドレスとトレーニング日をキーにしてDynamoDBからデータを取得
   const params = {
     "TableName": "licence-exchange-table",
     "KeyConditionExpression": "email = :v1 and trainingDate = :v2",
     "ExpressionAttributeValues": {
       ":v1": {
         "S": email
-      }
-      ,
+      },
       ":v2": {
         "S": trainingDate
       }
     }
   }
 
-  console.log("=====START=====")
+  console.log("===== DDB Query Start =====")
   const res = await ddbQuery(params);
   console.log(res)
-  console.log("===END====")
+  console.log("===== DDB Query END =====")
 
   // TODO: 取得したライセンスコードをJSONとして返却したい
 
